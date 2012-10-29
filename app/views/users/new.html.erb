@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="span3"><!-- SIDEBAR -->
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list" style="margin-left:-20px;">
+          <li class="nav-header">
+            New Interests
+          </li>
+            <li>
+              <h5>Football</h5>
+            </li>
+        </ul>
+       <hr>
+      </div>
+    </div><!-- END OF SIDEBAR -->
+
+    <div class="span9"><!-- MAIN CONTENT -->
+      <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <!-- alert-$type: warning can be error, success -->
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      <div class="well">
+          <legend style="font-size:38px;">Sign up</legend>
+
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+          <br>
+          <%= f.submit "Sign Up", :class => "btn btn-primary" %>
+      <% end %>
+      </div>
+
+      <hr>
+      <div>
+        © ePuss 2012, Department of Computer Science
+      </div>
+        
+    </div><!-- END OF MAIN CONTENT -->
+  </div>
+</div>

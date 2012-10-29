@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="span3"><!-- SIDEBAR -->
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list" style="margin-left:-20px;">
+          <li class="nav-header">
+            Your Interests
+          </li>
+            <li>
+              <h5>Football <span style="color:red;">#8</span>
+                <span class="btn-group pull-right">
+                    <a href="#" class="btn btn-mini btn-success">+1</a>
+                    <a href="#" class="btn btn-mini btn-danger">Delete</a>
+                </span>
+              </h5>
+            </li>
+        </ul>
+        <br>
+        <br>
+        <form class="form-search">
+        	<label>Add interest</label>
+	    	<input type="text" class="span2" placeholder="Football, tv-shows, cooking" style="padding-left:0px;width:180px;">
+        </form>
+        <hr>
+      </div>
+    </div><!-- END OF SIDEBAR -->
+
+
+    <div class="span9"><!-- MAIN CONTENT -->
+      <h1>Your profile</h1>
+        <!-- alert-$type: warning can be error, success -->
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Search by interests:</strong><br>
+          <p>Type in one or more interests to start exloring others interets!</p>
+        </div>
+
+      <div class="well">
+        <h5>Search:</h5>
+        <form class="form-search">
+		  <div class="input-append">
+		    <input type="text" class="span2 search-query">
+		    <button type="submit" class="btn btn-primary">Search</button>
+		  </div>
+        </form>
+        <hr>
+
+        <h5>Results</h5>
+        <table class="table .table-striped"><!-- Time Reports table -->
+          <th>Name</th>
+          <th>Mutal intrests</th>
+          <th>Points</th>
+            <tr>
+              <td><%= link_to "Username", "#" %></td>
+              <td>2</td>
+              <td>14</td>
+            </tr>
+        </table><!-- END of Time Reports table -->
+        <button class="btn btn-primary pull-right" type="submit">Clear</button>
+        <br>
+      </div>
+
+      <hr>
+      <div>
+        © ePuss 2012, Department of Computer Science
+      </div>
+        
+    </div><!-- END OF MAIN CONTENT -->
+  </div>
+</div>
