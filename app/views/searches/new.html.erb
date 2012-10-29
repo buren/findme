@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="span3"><!-- SIDEBAR -->
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list" style="margin-left:-20px;">
+          <li class="nav-header">
+            New Interests
+          </li>
+            <li>
+              <h5>Football</h5>
+            </li>
+        </ul>
+       <hr>
+      </div>
+    </div><!-- END OF SIDEBAR -->
+
+    <div class="span9"><!-- MAIN CONTENT -->
+      
+
+      <div class="well">
+          <legend style="font-size:38px;">Advanced Search</legend>
+          <%= form_for @search do |f| %>
+              <%= f.label :keywords %><br />
+              <%= f.text_field :keywords %>
+              <%= f.label :city %><br />
+              <%= f.text_field :city %>
+            <%= f.submit "Search", :class => "btn btn-primary" %>
+          <% end %> 
+      </div>
+
+      <hr>
+      <div>
+        © ePuss 2012, Department of Computer Science
+      </div>
+        
+    </div><!-- END OF MAIN CONTENT -->
+  </div>
+</div>
