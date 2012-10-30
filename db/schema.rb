@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030004804) do
+ActiveRecord::Schema.define(:version => 20121030090842) do
 
   create_table "interests", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20121030004804) do
     t.string   "keywords"
     t.string   "city"
     t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "interest_id"
+    t.datetime "created_at"
+    t.integer  "rank"
+    t.integer  "upvotes"
     t.datetime "updated_at"
   end
 
