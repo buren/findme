@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def new_interests
+	@new_interests = Interest.order("created_at desc").limit(15)
+  end
+  helper_method :new_interests
+
 private
 
 	def authorize
