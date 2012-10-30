@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  def new_interests
-	@new_interests = Interest.order("created_at desc").limit(15)
-  end
-  helper_method :new_interests
 
 private
 
@@ -15,6 +11,16 @@ private
 	def current_user
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
-	helper_method :current_user
+
+  def new_interests
+		@new_interests ||= Interest.order("created_at desc").limit(15)
+  end
+
+  def top_interests
+  	@top_interests ||= Interest.order("upvotes desc").limit(15)
+  end
+	
+	helper_method :current_user, :new_interests, :top_interests
+
 
 end

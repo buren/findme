@@ -7,10 +7,14 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to root_url, notice: "Welcome to Find.me, go add some interests!"
+			redirect_to root_url, notice: "Welcome to Find.me #{@user.email}, go add some interests!"
 		else
 			render "new"
 		end
+	end
+
+	def index
+		@users = User.search(params[:search])
 	end
 
 end

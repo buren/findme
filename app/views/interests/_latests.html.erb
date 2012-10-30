@@ -7,11 +7,12 @@
       <% new_interests.each do |interest| %>
         <li>
           <h5>
-            <%= interest.name %>
             <% if current_user %>
+            <span style="color:red;">#<%= interest.upvotes %></span>
+            <%= interest.name %>
               <span class="btn-group pull-right">
-                <%= link_to "+1", "#", :class => "btn btn-mini plus-one-tooltip", :rel => "tooltip", data: { id: interest.id, original_title: "Upvote rep for interest"} %>
-                <%= link_to "Add", "#", :class => "btn btn-mini btn-success", data: { id: interest.id } %>
+                <%= link_to "+1", "#", :class => "btn btn-mini btn-success findme-tooltip", :rel => "tooltip", data: { id: interest.id, original_title: "Upvote interest"} %>
+                <%= link_to "Add", "#", :class => "btn btn-mini btn-primary", data: { id: interest.id } %>
               </span>
             <% end %>
           </h5>
